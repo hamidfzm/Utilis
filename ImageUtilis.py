@@ -59,6 +59,9 @@ class ImageUtilis(object):
         """
         Cache images from url
         """
+	if not url:
+	    return None
+
         fdir = self.cache
         name = sha384(url).hexdigest() + splitext(url)[1]
         fname = join(fdir, name)
